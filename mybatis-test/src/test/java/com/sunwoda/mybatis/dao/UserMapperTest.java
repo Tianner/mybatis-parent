@@ -40,7 +40,7 @@ public class UserMapperTest {
 		User user = new User();
 		user.setName("田海波");
 		user.setAge(24);
-		user.setAddress("驻马店");
+		user.setAddress("上海市");
 		userMapper.save(user);
 		System.out.println("------save");
 	}
