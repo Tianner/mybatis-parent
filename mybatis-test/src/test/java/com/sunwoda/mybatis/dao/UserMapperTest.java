@@ -50,7 +50,7 @@ public class UserMapperTest {
 		user.setId(3);
 		user.setName("田海涛");
 		user.setAge(24);
-		user.setAddress("驻马店1111");
+		user.setAddress("驻马店11");
 		userMapper.update(user);
 		System.out.println("------update");
 	}
