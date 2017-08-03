@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunwoda.mybatis.mapper.UserMapper"> 
+	<!-- 查询一条数据 -->
+	<select id="findUserById" resultType="com.sunwoda.mybatis.pojo.User">
+		select *  from t_user where id = #{id}
+	</select>
+	<!-- 查询所有数据 -->
+	<select id="findAll" resultType="com.sunwoda.mybatis.pojo.User">
+		select * from t_user
+	</select>
+	<!-- 插入数据 -->
+	<insert id="save" parameterType="com.sunwoda.mybatis.pojo.User">
+		insert into t_user(
+			id,
+			user_name,
+			age,
+			address
+		) values(
+			null,
+			#{userName},
+			#{age},
+			#{address}
+		)
+	</insert>
+	<update id="update" parameterType="com.sunwoda.mybatis.pojo.User">
+		update t_user set
+		user_name = #{userName},
+		age = #{age},
+		address = #{address}
+		where id = #{id}
+	</update>
+	<delete id="deleteUserById" parameterType="java.lang.Integer">
+		delete from t_user where id = #{id}
+	</delete>
+</mapper>
